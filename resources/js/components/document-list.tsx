@@ -50,8 +50,7 @@ export function DocumentList({ projectId, documents }: Props) {
                 <FileText className="size-8 text-muted-foreground" />
                 <p className="font-medium">Belum ada dokumen</p>
                 <p className="max-w-sm text-sm text-muted-foreground">
-                    Tambahkan teks instruksi atau PDF di atas. Teksnya akan
-                    diekstrak dan dipotong agar bisa ditelusuri sumbernya.
+                    Tambahkan teks instruksi atau PDF di atas. Teksnya akan diekstrak dan dipotong agar bisa ditelusuri sumbernya.
                 </p>
             </div>
         );
@@ -108,12 +107,9 @@ export function DocumentList({ projectId, documents }: Props) {
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
-                                    <DialogTitle>
-                                        Hapus dokumen ini?
-                                    </DialogTitle>
+                                    <DialogTitle>Hapus dokumen ini?</DialogTitle>
                                     <DialogDescription>
-                                        "{document.title}" dan teks hasil
-                                        ekstraksinya akan dihapus permanen.
+                                        "{document.title}" dan teks hasil ekstraksinya akan dihapus permanen.
                                     </DialogDescription>
                                 </DialogHeader>
                                 <Form

@@ -90,10 +90,7 @@ export default function ProjectsShow({ project, documents, limits }: Props) {
                                 <DialogHeader>
                                     <DialogTitle>Hapus proyek ini?</DialogTitle>
                                     <DialogDescription>
-                                        "{project.title}" akan dihapus permanen,
-                                        termasuk semua dokumen dan data yang
-                                        terkait dengannya. Tindakan ini tidak
-                                        bisa dibatalkan.
+                                        "{project.title}" akan dihapus permanen, termasuk semua dokumen dan data yang terkait dengannya. Tindakan ini tidak bisa dibatalkan.
                                     </DialogDescription>
                                 </DialogHeader>
                                 <Form {...destroy.form(project.id)}>
@@ -139,10 +136,7 @@ export default function ProjectsShow({ project, documents, limits }: Props) {
                 <section className="grid gap-4">
                     <h2 className="text-lg font-medium">Dokumen instruksi</h2>
                     <AddDocumentCard projectId={project.id} limits={limits} />
-                    <DocumentList
-                        projectId={project.id}
-                        documents={documents}
-                    />
+                    <DocumentList projectId={project.id} documents={documents} />
                 </section>
 
                 <Card className="border-dashed">
@@ -151,9 +145,7 @@ export default function ProjectsShow({ project, documents, limits }: Props) {
                             Persyaratan dan tugas
                         </CardTitle>
                         <CardDescription>
-                            Belum tersedia di versi ini. Ekstraksi persyaratan
-                            dengan AI dan perencanaan tugas ditambahkan pada
-                            tahap pengembangan berikutnya.
+                            Belum tersedia di versi ini. Ekstraksi persyaratan dengan AI dan perencanaan tugas ditambahkan pada tahap pengembangan berikutnya.
                         </CardDescription>
                     </CardHeader>
                 </Card>

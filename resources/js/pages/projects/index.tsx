@@ -43,9 +43,7 @@ export default function ProjectsIndex({ projects }: Props) {
                         <FolderOpen className="size-8 text-muted-foreground" />
                         <p className="font-medium">Belum ada proyek</p>
                         <p className="max-w-sm text-sm text-muted-foreground">
-                            Mulai dengan membuat proyek, misalnya "Tugas Besar
-                            Basis Data". Instruksi dosen akan disimpan di
-                            dalamnya.
+                            Mulai dengan membuat proyek, misalnya "Tugas Besar Basis Data". Instruksi dosen akan disimpan di dalamnya.
                         </p>
                         <Button asChild>
                             <Link href={create()}>
@@ -79,8 +77,7 @@ export default function ProjectsIndex({ projects }: Props) {
                                                 </CardDescription>
                                             </CardHeader>
                                             <CardContent className="text-xs text-muted-foreground">
-                                                Dibuat{' '}
-                                                {formatDate(project.created_at)}
+                                                Dibuat {formatDate(project.created_at)}
                                             </CardContent>
                                         </Card>
                                     </Link>

@@ -29,9 +29,7 @@ export function AddDocumentCard({ projectId, limits }: Props) {
             <CardHeader>
                 <CardTitle className="text-base">Tambah instruksi</CardTitle>
                 <CardDescription>
-                    Tempel teks instruksi atau unggah PDF yang teksnya bisa
-                    disalin. PDF hasil pindaian belum didukung karena belum ada
-                    OCR.
+                    Tempel teks instruksi atau unggah PDF yang teksnya bisa disalin. PDF hasil pindaian belum didukung karena belum ada OCR.
                 </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
@@ -101,11 +99,7 @@ export function AddDocumentCard({ projectId, limits }: Props) {
                                         aria-invalid={Boolean(errors.text)}
                                     />
                                     <p className="text-xs text-muted-foreground">
-                                        Maksimal{' '}
-                                        {limits.maxTextChars.toLocaleString(
-                                            'id-ID',
-                                        )}{' '}
-                                        karakter.
+                                        Maksimal {limits.maxTextChars.toLocaleString('id-ID')} karakter.
                                     </p>
                                     <InputError message={errors.text} />
                                 </div>

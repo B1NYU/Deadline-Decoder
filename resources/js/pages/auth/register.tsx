@@ -109,6 +109,5 @@ export default function Register() {
 
 Register.layout = {
     title: 'Buat akun',
-    description:
-        'Akunmu menyimpan proyek dan dokumen secara terpisah dari pengguna lain',
+    description: 'Akunmu menyimpan proyek dan dokumen secara terpisah dari pengguna lain',
 };

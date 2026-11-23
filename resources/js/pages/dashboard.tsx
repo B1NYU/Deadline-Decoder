@@ -57,8 +57,7 @@ export default function Dashboard({ projectCount, recentProjects }: Props) {
                             <FolderOpen className="size-8 text-muted-foreground" />
                             <p className="font-medium">Belum ada proyek</p>
                             <p className="max-w-sm text-sm text-muted-foreground">
-                                Buat proyek untuk setiap tugas atau proyek
-                                kuliah, lalu simpan instruksinya di sana.
+                                Buat proyek untuk setiap tugas atau proyek kuliah, lalu simpan instruksinya di sana.
                             </p>
                             <Button asChild>
                                 <Link href={create()}>
@@ -79,13 +78,10 @@ export default function Dashboard({ projectCount, recentProjects }: Props) {
                                                 {project.title}
                                             </p>
                                             <p className="text-xs text-muted-foreground">
-                                                Dibuat{' '}
-                                                {formatDate(project.created_at)}
+                                                Dibuat {formatDate(project.created_at)}
                                             </p>
                                         </div>
-                                        <ProjectStatusBadge
-                                            status={project.status}
-                                        />
+                                        <ProjectStatusBadge status={project.status} />
                                     </Link>
                                 </li>
                             ))}

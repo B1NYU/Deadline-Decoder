@@ -34,9 +34,7 @@ export default function DocumentsShow({ project, document, chunks }: Props) {
                         {document.title}
                     </h1>
                     <p className="mt-1 text-sm text-muted-foreground">
-                        Teks hasil ekstraksi. Bandingkan dengan dokumen aslinya;
-                        kutipan dan sumber di langkah berikutnya mengacu pada
-                        potongan ini.
+                        Teks hasil ekstraksi. Bandingkan dengan dokumen aslinya; kutipan dan sumber di langkah berikutnya mengacu pada potongan ini.
                     </p>
                 </header>
 
