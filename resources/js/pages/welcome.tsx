@@ -48,14 +48,19 @@ export default function Welcome() {
                         Versi pengembangan
                     </p>
                     <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-balance md:text-5xl">
-                        Ubah instruksi tugas yang panjang menjadi rencana kerja yang jelas.
+                        Ubah instruksi tugas yang panjang menjadi rencana kerja
+                        yang jelas.
                     </h1>
                     <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-                        Dokumen dosen tetap jadi acuan utama. Deadline Decoder membantumu menemukan persyaratan dan tenggatnya, lalu merencanakan pengerjaannya.
+                        Dokumen dosen tetap jadi acuan utama. Deadline Decoder
+                        membantumu menemukan persyaratan dan tenggatnya, lalu
+                        merencanakan pengerjaannya.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-3">
                         <Button size="lg" asChild>
-                            <Link href={register()}>Mulai dengan akun baru</Link>
+                            <Link href={register()}>
+                                Mulai dengan akun baru
+                            </Link>
                         </Button>
                         <Button size="lg" variant="outline" asChild>
                             <Link href={login()}>Saya sudah punya akun</Link>

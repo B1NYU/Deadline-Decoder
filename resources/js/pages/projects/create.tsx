@@ -11,7 +11,8 @@ export default function ProjectsCreate() {
                     Proyek baru
                 </h1>
                 <p className="mt-1 mb-8 text-sm text-muted-foreground">
-                    Beri nama proyek. Dokumen instruksinya ditambahkan setelah proyek dibuat.
+                    Beri nama proyek. Dokumen instruksinya ditambahkan setelah
+                    proyek dibuat.
                 </p>
                 <ProjectForm
                     formAttributes={store.form()}

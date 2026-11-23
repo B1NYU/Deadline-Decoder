@@ -3,7 +3,10 @@ import type { ProjectStatus } from '@/types/project';
 
 const statusMeta: Record<
     ProjectStatus,
-    { label: string; variant: 'default' | 'secondary' | 'outline' | 'destructive' }
+    {
+        label: string;
+        variant: 'default' | 'secondary' | 'outline' | 'destructive';
+    }
 > = {
     draft: { label: 'Draf', variant: 'outline' },
     analyzing: { label: 'Sedang dianalisis', variant: 'secondary' },

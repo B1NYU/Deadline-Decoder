@@ -3,7 +3,10 @@ import type { DocumentStatus } from '@/types/document';
 
 const statusMeta: Record<
     DocumentStatus,
-    { label: string; variant: 'default' | 'secondary' | 'outline' | 'destructive' }
+    {
+        label: string;
+        variant: 'default' | 'secondary' | 'outline' | 'destructive';
+    }
 > = {
     pending: { label: 'Menunggu', variant: 'outline' },
     processing: { label: 'Diproses', variant: 'secondary' },
