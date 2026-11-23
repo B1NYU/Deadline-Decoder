@@ -1,0 +1,23 @@
+TUGAS BESAR BASIS DATA
+Semester Ganjil 2026/2027
+(DOKUMEN SINTETIS UNTUK PENGUJIAN. Bukan instruksi dosen yang sebenarnya.)
+
+1. Gambaran umum
+Setiap kelompok merancang dan membangun basis data untuk sebuah sistem informasi sederhana pilihan kelompok.
+
+2. Ketentuan
+- Kelompok terdiri dari 3 sampai 4 mahasiswa.
+- Rancang ERD dengan minimal 8 entitas.
+- Lakukan normalisasi hingga bentuk normal ketiga (3NF).
+- Implementasikan rancangan di MySQL dan sertakan skrip SQL.
+- Tulis minimal 10 query yang mencakup JOIN dan agregasi.
+
+3. Pengumpulan
+- Laporan akhir dikumpulkan paling lambat Jumat, 11 Desember 2026 pukul 23.59 WIB.
+- Laporan berformat PDF dengan maksimal 25 halaman.
+- Nama berkas: NIM_NamaKetua.pdf.
+- Keterlambatan tidak diterima kecuali ada izin tertulis dari dosen.
+
+4. Jadwal lain
+- Revisi proposal diserahkan pada pertemuan ke-6.
+- Demo aplikasi dijadwalkan pada minggu terakhir perkuliahan.

@@ -1,5 +1,8 @@
-import { Form, Head, Link } from '@inertiajs/react';
+import { Form, Head, Link, usePoll } from '@inertiajs/react';
 import { Pencil, Trash2 } from 'lucide-react';
+import { useEffect } from 'react';
+import { AddDocumentCard } from '@/components/add-document-card';
+import { DocumentList } from '@/components/document-list';
 import { ProjectStatusBadge } from '@/components/project-status-badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -22,9 +25,37 @@ import {
 import { Spinner } from '@/components/ui/spinner';
 import { formatDate } from '@/lib/format-date';
 import { destroy, edit, index } from '@/routes/projects';
+import type { DocumentItem, DocumentLimits } from '@/types/document';
 import type { Project } from '@/types/project';
 
-export default function ProjectsShow({ project }: { project: Project }) {
+type Props = {
+    project: Project;
+    documents: DocumentItem[];
+    limits: DocumentLimits;
+};
+
+export default function ProjectsShow({ project, documents, limits }: Props) {
+    const { start, stop } = usePoll(
+        2000,
+        { only: ['documents'] },
+        { autoStart: false },
+    );
+
+    const hasActiveDocuments = documents.some(
+        (document) =>
+            document.status === 'pending' || document.status === 'processing',
+    );
+
+    useEffect(() => {
+        if (hasActiveDocuments) {
+            start();
+        } else {
+            stop();
+        }
+
+        return stop;
+    }, [hasActiveDocuments]);
+
     return (
         <>
             <Head title={project.title} />
@@ -59,7 +90,7 @@ export default function ProjectsShow({ project }: { project: Project }) {
                                 <DialogHeader>
                                     <DialogTitle>Hapus proyek ini?</DialogTitle>
                                     <DialogDescription>
-                                        "{project.title}" akan dihapus permanen, termasuk semua data yang terkait dengannya. Tindakan ini tidak bisa dibatalkan.
+                                        "{project.title}" akan dihapus permanen, termasuk semua dokumen dan data yang terkait dengannya. Tindakan ini tidak bisa dibatalkan.
                                     </DialogDescription>
                                 </DialogHeader>
                                 <Form {...destroy.form(project.id)}>
@@ -102,13 +133,19 @@ export default function ProjectsShow({ project }: { project: Project }) {
                     </CardContent>
                 </Card>
 
+                <section className="grid gap-4">
+                    <h2 className="text-lg font-medium">Dokumen instruksi</h2>
+                    <AddDocumentCard projectId={project.id} limits={limits} />
+                    <DocumentList projectId={project.id} documents={documents} />
+                </section>
+
                 <Card className="border-dashed">
                     <CardHeader>
                         <CardTitle className="text-base">
-                            Instruksi, persyaratan, dan tugas
+                            Persyaratan dan tugas
                         </CardTitle>
                         <CardDescription>
-                            Belum tersedia di versi ini. Unggah dokumen, ekstraksi persyaratan, dan perencanaan tugas akan ditambahkan pada tahap pengembangan berikutnya.
+                            Belum tersedia di versi ini. Ekstraksi persyaratan dengan AI dan perencanaan tugas ditambahkan pada tahap pengembangan berikutnya.
                         </CardDescription>
                     </CardHeader>
                 </Card>

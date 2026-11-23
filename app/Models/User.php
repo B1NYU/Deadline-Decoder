@@ -7,10 +7,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
@@ -43,6 +43,16 @@ class User extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Delete projects through the model so their documents' files are removed too.
+     */
+    protected static function booted(): void
+    {
+        static::deleting(function (User $user): void {
+            $user->projects()->get()->each(fn (Project $project) => $project->delete());
+        });
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Projects\ProjectRequest;
+use App\Http\Resources\DocumentResource;
 use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -58,6 +59,14 @@ class ProjectController extends Controller
 
         return Inertia::render('projects/show', [
             'project' => $this->projectData($project),
+            'documents' => fn (): array => DocumentResource::collection(
+                $project->documents()->withCount('chunks')->latest()->latest('id')->get()
+            )->resolve(),
+            'limits' => [
+                'maxTextChars' => (int) config('documents.max_text_chars'),
+                'minTextChars' => (int) config('documents.min_text_chars'),
+                'maxPdfMb' => intdiv((int) config('documents.max_pdf_kb'), 1024),
+            ],
         ]);
     }
 
